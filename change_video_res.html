@@ -2,9 +2,10 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Video Editor</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Video Resolution</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
 </head>
@@ -48,18 +49,24 @@
             </ul>
         </div>
     </nav>
-    <div class="container">
-        <br /><br />
-        <h1 class="text-center">Merge Videos</h1>
-        <form action="/merge" method="post" enctype="multipart/form-data" id="Merge">
+    <div class="container mt-5">
+        <h1 class="text-center">Change Video Resolution</h1>
+        <form action="/change-video-res" method="post" enctype="multipart/form-data">
+            <label for="video">Upload Video</label>
+            <input type="file" name="video" id="video" required class="form-control">
+            <br>
             <div class="form-group">
-                <input type="file" name="files" multiple required class="form-control" id="Value" />
+                <label for="to">To:</label>
+                <select class="form-control" name="to">
+                    <option>240</option>
+                    <option>360</option>
+                    <option>480</option>
+                    <option>720</option>
+                    <option>1080</option>
+                </select>
             </div>
-            <div class="form-group">
-                <div class="d-grid gap-2">
-                    <button class="btn btn-danger btn-block mt-4" id="button">Merge</button>
-                </div>
-            </div>
+            <br />
+            <input type="submit" value="Change Video Resolution" class="btn btn-danger btn-block">
         </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
